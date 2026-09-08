@@ -1,0 +1,30 @@
+# preprocess-build/default-action/step-register.yaml
+steps:
+  - number: 1
+    name: env-init
+    script: step-env-init.py
+    notes: ""
+  - number: 2
+    name: unpack
+    script: step-unpack.py
+    notes: ""
+  - number: 3
+    name: fix-res
+    script: step-fix-res.py
+    notes: ""
+  - number: 4
+    name: fix-manifest
+    script: step-fix-manifest.py
+    notes: ""
+  - number: 5
+    name: namespace
+    script: step-namespace.py
+    notes: ""
+  - number: 6
+    name: smali-to-jar
+    script: step-smali-to-jar.py
+    notes: ""
+  - number: 7
+    name: gradle-build
+    script: step-gradle-build.py
+    notes: ""

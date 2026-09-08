@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AssetsTools.NET">
+      <HintPath>/home/leo/文档/android-crack/tools/crack-intergration-tools/source-projects/UABEA/Libs/AssetsTools.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

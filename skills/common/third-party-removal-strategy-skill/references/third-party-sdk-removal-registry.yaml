@@ -1,0 +1,146 @@
+# auto-updated by stage-04 step2 [FLOWFIX 2026-08-18]
+schema_version: 1
+manifest_drop_exact:
+- name: FirebaseInitProvider
+  why: onCreate 调 FirebaseApp.initializeApp → Ktor 静态初始化失败 → 自杀
+- name: MobileAdsInitProvider
+  why: GMS ads init 触发 AppLovin mediation 列所有广告 SDK → 缺类 NoClassDefFoundError → 自杀
+- name: com.squareup.picasso
+  why: Squareup Picasso ContentProvider 类缺失导致 ClassNotFoundException
+manifest_drop_keyword_contains:
+- name: vungle
+  why: 广告 SDK，不影响主玩法
+- name: applovin
+  why: 广告 SDK，不影响主玩法
+- name: facebook
+  why: 广告 SDK（Facebook Audience Network）
+- name: google.android.gms.ads
+  why: GMS ads 测量
+- name: ironsource
+  why: 广告 SDK
+- name: yandex.mobile.ads
+  why: 广告 SDK
+- name: bigo
+  why: 广告 SDK
+- name: bidmachine
+  why: 广告 SDK
+- name: my.target
+  why: 广告 SDK
+- name: appmetrica
+  why: 广告 SDK
+- name: picasso
+  why: Squareup Picasso（注意：被 exact 'com.squareup.picasso' 优先匹配）
+- name: squareup
+  why: Squareup 系列（被 picasso 覆盖）
+- name: adjoe
+  why: 广告 SDK
+- name: moloco
+  why: 广告 SDK
+- name: androidx.startup
+  why: AndroidX Startup（早期 SDK 启动框架）
+- name: com.adjust
+  why: Adjust 归因 SDK
+- name: mbridge
+  why: Mintegral 广告 SDK
+- name: adn
+  why: 'auto-added by stage-04 step2 [FLOWFIX 2026-08-18]: step1 scan detected'
+- name: bytedance
+  why: 'auto-added by stage-04 step2 [FLOWFIX 2026-08-18]: step1 scan detected'
+- name: digitalturbine
+  why: 'auto-added by stage-04 step2 [FLOWFIX 2026-08-18]: step1 scan detected'
+- name: firebase
+  why: 'auto-added by stage-04 step2 [FLOWFIX 2026-08-18]: step1 scan detected'
+- name: pubnative
+  why: 'auto-added by stage-04 step2 [FLOWFIX 2026-08-18]: step1 scan detected'
+- name: yandex
+  why: 'auto-added by stage-04 step2 [FLOWFIX 2026-08-18]: step1 scan detected'
+- name: custom_notification_android_activity
+  why: Firebase MessagingUnityPlayerActivity meta-data；Firebase .so 已强制移除，无需此 meta
+so_early_kill:
+- name: libcrashlytics.so
+  why: Firebase Crashlytics native crash handler，会调 killProcess
+- name: libcrashlytics-common.so
+  why: Crashlytics 通用库
+- name: libcrashlytics-handler.so
+  why: Crashlytics exception handler
+- name: libcrashlytics-trampoline.so
+  why: Crashlytics 信号桥接 trampoline
+- name: libFirebaseCppCrashlytics.so
+  why: Firebase C++ Crashlytics 桥接
+- name: libapplovin-native-crash-reporter.so
+  why: AppLovin native crash reporter
+so_keyword_contains:
+- applovin
+- mbridge
+- vungle
+- facebook
+- chartboost
+- inmobi
+- pangle
+- ironsource
+- appsflyer
+- adjust
+- tapjoy
+- bugly
+- safedk
+- adn
+- bytedance
+- digitalturbine
+- firebase
+- pubnative
+- yandex
+raw_apk_drop_entries:
+- lib/arm64-v8a/libcrashlytics-common.so
+- lib/arm64-v8a/libcrashlytics-handler.so
+- lib/arm64-v8a/libcrashlytics-trampoline.so
+- lib/arm64-v8a/libcrashlytics.so
+- lib/arm64-v8a/libFirebaseCppCrashlytics.so
+- lib/arm64-v8a/libapplovin-native-crash-reporter.so
+- assets/crashlytics-build.properties
+- res/raw/firebase_crashlytics_keep.xml
+build_config_stubs:
+- class_path: com/facebook/ads/BuildConfig.java
+  package: com.facebook.ads
+- class_path: com/mbridge/BuildConfig.java
+  package: com.mbridge
+- class_path: com/moloco/sdk/BuildConfig.java
+  package: com.moloco.sdk
+- class_path: com/vungle/ads/BuildConfig.java
+  package: com.vungle.ads
+- class_path: net/pubnative/lite/sdk/BuildConfig.java
+  package: net.pubnative.lite.sdk
+- class_path: io/adn/sdk/BuildConfig.java
+  package: io.adn.sdk
+smali_exclude_prefixes:
+- androidx/compose
+- androidx/work
+- androidx/browser
+- com/google/firebase/crashlytics
+- com/unity3d/ads
+- com/unity3d/services
+- com/unity3d/ads/mediation
+- com/ironsource
+- com/applovin
+- com/applovin/shadow
+- com/iab
+- com/google/android/gms
+- com/google/android/play
+- com/google/protobuf
+- com/google/common
+- com/google/firebase
+- com/amazon/device/ads
+- com/yandex
+- gatewayprotocol
+- io/bidmachine
+- net/pubnative
+- org/chromium
+- org/intellij
+meta_data_force_value:
+- name: firebase_crashlytics_collection_enabled
+  value: 'false'
+  why: 即使删了 libcrashlytics，Java 侧 Crashlytics 静态初始化仍可能调 native signal
+engine_so_keep:
+- libil2cpp.so
+- libunity.so
+- libmain.so
+- libGameAssembly.so

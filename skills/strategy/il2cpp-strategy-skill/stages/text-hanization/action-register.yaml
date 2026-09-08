@@ -1,0 +1,20 @@
+# text-hanization/action-register.yaml — 动作路由/配置表(动态 action 声明)
+#
+# run-action: 当前子阶段实际使用的 action 名(可被 --action 参数覆盖,也可由运行时环境决定)
+#              默认当前 = metadata-hanize(方案A: global-metadata.dat 字符串字面量静态替换)
+#              可用 --action default-action 切回 hook 方案(hanization_map.h)
+# default-action: 只是默认 action 名,实际可为任意 action 名(如 fast-analyze / deep-analyze)
+# all-actions: 该子阶段所有可用执行方案(action)清单;每项 {name, steps, path, notes}
+#              action-driver 按 run-action + 参数从清单动态选择
+#
+run-action: metadata-hanize
+
+all-actions:
+    - name: metadata-hanize
+      steps: 6
+      path: ./metadata-hanize
+      notes: "方案A: global-metadata.dat 字符串字面量静态替换(Il2CppDumper stringliteral.json + metadata-patcher)"
+    - name: default-action
+      steps: 5
+      path: ./default-action
+      notes: "hook 方案: hanization_map.h + values-zh-rCN/strings.xml"

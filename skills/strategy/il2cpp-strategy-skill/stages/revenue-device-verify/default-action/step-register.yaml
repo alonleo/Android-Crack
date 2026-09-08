@@ -1,0 +1,14 @@
+# 06-revenue-device-verify/default-action/step-register.yaml
+steps:
+  - number: 01
+    name: check-env
+    script: step-check-env.py
+    notes: ""
+  - number: 02
+    name: run-verify
+    script: step-run-verify.py
+    notes: ""
+  - number: 03
+    name: gen-report
+    script: step-gen-report.py
+    notes: ""

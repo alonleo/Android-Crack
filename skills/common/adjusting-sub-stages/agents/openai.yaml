@@ -1,0 +1,4 @@
+interface:
+  display_name: "调整子阶段"
+  short_description: "Safely adjust global or per-type sub-stages"
+  default_prompt: "Use $adjusting-sub-stages to modify a global or type-specific sub-stage safely."

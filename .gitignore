@@ -1,0 +1,111 @@
+# ========================================
+# Android Reverse Engineering Workspace
+# ========================================
+# 维护说明（AGENTS.md §1.6 任务后固化）：按"内容/版本/构建产物"分级忽略。
+# 推送 git 前先 cat .gitignore 确认无遗漏；新增工具/产物类型时在此追加。
+
+# ---- 源 APK 池（read-only 大二进制，6.6G）----
+apks/
+
+# ---- crackings/ 整棵忽略（用户决定：目录下所有内容均不入库）----
+# 含各 type 项目的过程产物、AS 工程构建产物、中间/二进制产物。
+# 如需选择性推送单个项目的报告/脚本，可在此下方批量追加白名单（!crackings/...），
+# 或改用分目录排除；默认整棵忽略最简单可靠。
+crackings/
+
+# ---- 临时工作目录（AGENTS.md §2.1 标记为"项目跑完由 cleanup 阶段自动清理"）----
+temp/
+tmp/
+tmp_dex_work/
+
+# ---- 私有记录 / 工作数据 ----
+.agents/
+.mimocode/
+record-documents/
+reference-project/
+
+# ---- 工具库 tools/（用户决定：除 tools/crack-intergration-tools/docs/ 外全部不入库）----
+# tools/android-reverse/         知识库（大体积/非交付）
+# tools/environments/            9.9G（JDK/SDK/jadx/ffdec/swfmill/venv）
+# tools/crack-intergration-tools/execable/          已编译二进制
+# tools/crack-intergration-tools/source-projects/   上游源码（大体积）
+# 仅保留 tools/crack-intergration-tools/docs/（工具文档）入库。
+tools/android-reverse/
+tools/environments/
+tools/crack-intergration-tools/execable/
+tools/crack-intergration-tools/source-projects/
+
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# ---- Node / npm ----
+node_modules/
+package-lock.json
+
+# ---- IDE / 编辑器 ----
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+.idea/workspace.xml
+
+# ---- OS ----
+.D.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ---- 杂项构建产物 ----
+*.class
+*.dex
+*.arsc
+*.so.backup
+*.log
+*.bak
+
+# ---- Hermes Agent / CLI 私有配置 ----
+.opencode.jsonc
+.opencode/
+.hermes/
+
+# ---- 系统级工具脚本（应放 ~/bin/，不进仓库）----
+# 顶层 install.sh 是 Hermes Agent 安装器，非项目工作流
+# fix-audio-to-headphone.py 是音频修复脚本，跨平台无关
+install.sh
+fix-audio-to-headphone.py
+
+# ========================================
+# 推送建议（人工核对用，不影响 git）
+# ========================================
+# 应推送：
+#   - AGENTS.md / WORKFLOW.md / OBJECTIVES.md / STRATEGY.md / EXPERIENCES.md（项目工作流根文档）
+#   - skills/（跨 type 共享脚本 + 各 type skill）
+#   - crackings/<type>/<Name>/ 下的 status.yaml / findings.md / dir-index.yaml / stages/ 阶段产物
+#     / source.apk.md5 / output-project-manifest.yaml
+#   - tools/crack-intergration-tools/source-projects/ + docs/（工具源码 + 文档）
+#
+# 不应推送：
+#   - apks/（源 APK，6.6G，read-only 原始材料）
+#   - tools/environments/（JDK/SDK，9.9G，环境变量指向）
+#   - tools/crack-intergration-tools/execable/（已编译 binary）
+#   - crackings/<type>/<Name>/{raw,patched,project/build}/（解包产物 + 构建产物）
+#   - temp/ + tmp/ + tmp_dex_work/ + record-documents/（临时 + 私有记录）
+#   - .agents/ + .mimocode/ + reference-project/（私有 + 参考）
+#   - install.sh + fix-audio-to-headphone.py（系统级工具，按 user profile 放 ~/bin/）
+
+# ASB/（ASBuilder 源码 + 部署 jar）：不入库。ASBuilder.jar 124.98MB 超 GitHub 100MB 单文件限制，
+# 且已在本地历史剥离（filter-branch），仅保留磁盘工作区。
+ASB/
+
+# 子阶段运行期产物（勿提交，跨会话刷新）
+.action_result.json
+.sub_stage_results.json
+

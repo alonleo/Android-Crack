@@ -1,0 +1,25 @@
+steps:
+- number: 1
+  name: load-feature-checklist
+  script: step-load-feature-checklist.py
+  notes: 读取并校验统一 YAML；异常立即阻断，输出候选项与清单 SHA-256
+- number: 2
+  name: smali-to-jar
+  script: step-smali-to-jar.py
+  notes: ''
+- number: 3
+  name: gradle-build
+  script: step-gradle-build.py
+  notes: ''
+- number: 4
+  name: gen-report
+  script: step-gen-report.py
+  notes: ''
+- number: 5
+  name: scan-features
+  script: step-scan-features.py
+  notes: ''
+- number: 6
+  name: gen-hide-plan
+  script: step-gen-hide-plan.py
+  notes: ''

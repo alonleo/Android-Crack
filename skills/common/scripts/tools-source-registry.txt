@@ -1,0 +1,40 @@
+# tools-source-registry.txt — Android 逆向工具项目 git 来源清单
+# ---------------------------------------------------------------
+# 供 install-tools.sh / install-tools.bat 读取，是"下载工具项目"的唯一事实来源。
+# 格式（每行，| 分隔，不可包含 |）：
+#   <目标目录名>|<git clone URL>|<简短说明>
+#   以 # 开头的行为注释，被脚本忽略。
+# 维护规则：新增/改源时在此追加或更新；目标目录名为 source-projects/ 下的目录名。
+# 注意：URL 的仓库名可以与目标目录名不同（见 reverse-tool）。
+#
+# -- 非 git 分发的工具（不适用 clone，已内置在工作区）--
+#   dex2jar       : 发布版 jar 分发（source-projects/dex2jar/ 已含 lib/*.jar + bin 脚本）
+#   FixStackmaps  : 工作区自带单个 Java 源文件（source-projects/FixStackmaps/FixStackmaps.java）
+#
+And64InlineHook|https://github.com/Rprop/And64InlineHook.git|ARM64 inline hook(Rprop 单文件)
+Android_Inline_Hook_ARM64|https://github.com/GToad/Android_Inline_Hook_ARM64.git|ARM64 inline hook(GToad 多文件)
+assetstudio|https://github.com/Razviar/assetstudio.git|Unity .assets/.bundle 提取(GUI+CLI)
+cc-reverse|https://github.com/Crain99/cc-reverse.git|Cocos2d-x Lua 解密/逆向
+cocos2d-dec|https://github.com/TeamRocketIst/cocos2d-dec.git|Cocos2d-x 解码
+dnSpy|https://github.com/dnSpy/dnSpy.git|.NET 反编译+调试+编辑(WPF)
+frida-cocosjs|https://github.com/commonuserlol/frida-cocosjs.git|Frida hook cocos-js
+ghidra|https://github.com/NationalSecurityAgency/ghidra.git|NSA SRE 框架(反汇编/反编译/脚本)
+Il2CppDecompiler|https://github.com/jakzo/Il2CppDecompiler.git|il2cpp C# 反编译(旧版)
+Il2CppDumper|https://github.com/Perfare/Il2CppDumper.git|il2cpp → C# 桩(MIT)
+Il2CppInspectorPro|https://github.com/Jadis0x/Il2CppInspectorPro.git|il2cpp 工业级反编译(含插件系统)
+il2Fusion|https://github.com/PenguinAndy/il2Fusion.git|il2cpp 工具
+ILSpy|https://github.com/icsharpcode/ILSpy.git|.NET 反编译(跨平台 Avalonia + ilspycmd)
+jadx|https://github.com/skylot/jadx.git|APK/Dex → Java 源码
+JSC-PyDecrypt-Tool|https://github.com/bartlomiejduda/JSC-PyDecrypt-Tool.git|Cocos JSC 解密
+LLM-image-translator|https://github.com/jedzqer/LLM-image-translator.git|LLM 图像翻译
+PaddleOCR|https://github.com/PaddlePaddle/PaddleOCR.git|OCR 引擎(PaddlePaddle)
+reverse-tool|https://github.com/zboralski/reverse.git|网络反向工具(URL 仓库名 reverse)
+rodroid-il2cppdumper|https://github.com/rodroidmods/rodroid-il2cppdumper.git|il2cpp 反编译(Rust+Tauri2 GUI)
+tesseract|https://github.com/tesseract-ocr/tesseract.git|OCR 引擎(C++17,LSTM)
+txtrtool|https://github.com/xchellx/txtrtool.git|Metroid Prime TXTR 纹理解码/编码
+UABEA|https://github.com/nesrak1/UABEA.git|Unity 资源包编辑(原版 Avalonia11)
+UABEANext|https://github.com/nesrak1/UABEANext.git|Unity 资源包编辑(新版 Dock 多面板)
+Underanalyzer|https://github.com/UnderminersTeam/Underanalyzer.git|GML VM 分析/反编译库
+UndertaleModTool|https://github.com/UnderminersTeam/UndertaleModTool.git|GameMaker .droid 数据编辑
+Unlimited-OCR|https://github.com/baidu/Unlimited-OCR.git|SGLang OCR 长上下文识别
+xapk-to-apk|https://github.com/LuigiVampa92/xapk-to-apk.git|XAPK → fat APK(Python 无第三方依赖)

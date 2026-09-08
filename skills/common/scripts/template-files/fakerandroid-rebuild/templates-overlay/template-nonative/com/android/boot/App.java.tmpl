@@ -1,0 +1,17 @@
+package com.android.boot;
+import android.app.Application;
+
+/**
+ * App — ASBuilder no-native-libs variant.
+ * 适用于 APK 不含任何 lib/*.so 的纯 Java 工程：
+ * 不加载 native-lib、不声明 native 方法（无 .so 可 hook）。
+ * 仅作为可二次开发的 Application 入口骨架。
+ */
+public class App extends {APPLICATION_NAME} {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
+
+}

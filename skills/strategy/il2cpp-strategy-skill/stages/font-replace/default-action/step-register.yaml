@@ -1,0 +1,22 @@
+# 09-font-replace/default-action/step-register.yaml
+steps:
+  - number: 01
+    name: smali-to-jar
+    script: step-smali-to-jar.py
+    notes: ""
+  - number: 02
+    name: gradle-build
+    script: step-gradle-build.py
+    notes: ""
+  - number: 03
+    name: gen-report
+    script: step-gen-report.py
+    notes: ""
+  - number: 04
+    name: scan-fonts
+    script: step-scan-fonts.py
+    notes: ""
+  - number: 05
+    name: replace-font
+    script: step-replace-font.py
+    notes: ""

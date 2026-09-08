@@ -1,0 +1,10 @@
+# 01-static-analyze/default-action/step-register.yaml
+steps:
+  - number: 01
+    name: scan-entries
+    script: step-scan-entries.py
+    notes: ""
+  - number: 02
+    name: gen-findings
+    script: step-gen-findings.py
+    notes: " "

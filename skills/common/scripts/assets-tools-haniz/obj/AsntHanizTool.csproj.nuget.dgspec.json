@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/leo/文档/android-crack/skills/strategy/il2cpp-strategy-skill/scripts/common/assets-tools-haniz/AsntHanizTool.csproj": {}
+  },
+  "projects": {
+    "/home/leo/文档/android-crack/skills/strategy/il2cpp-strategy-skill/scripts/common/assets-tools-haniz/AsntHanizTool.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/leo/文档/android-crack/skills/strategy/il2cpp-strategy-skill/scripts/common/assets-tools-haniz/AsntHanizTool.csproj",
+        "projectName": "AsntHanizTool",
+        "projectPath": "/home/leo/文档/android-crack/skills/strategy/il2cpp-strategy-skill/scripts/common/assets-tools-haniz/AsntHanizTool.csproj",
+        "packagesPath": "/home/leo/.nuget/packages/",
+        "outputPath": "/home/leo/文档/android-crack/skills/strategy/il2cpp-strategy-skill/scripts/common/assets-tools-haniz/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/leo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://mirrors.huaweicloud.com/repository/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# sdk-network-device-verify/default-action/step-register.yaml
+steps:
+  - number: 1
+    name: check-environment
+    script: step-check-environment.py
+    notes: ""
+  - number: 2
+    name: verify-normal-mode
+    script: step-verify-normal-mode.py
+    notes: ""
+  - number: 3
+    name: switch-airplane-mode
+    script: step-switch-airplane-mode.py
+    notes: ""
+  - number: 4
+    name: verify-airplane-mode
+    script: step-verify-airplane-mode.py
+    notes: ""
+  - number: 5
+    name: restore-network
+    script: step-restore-network.py
+    notes: ""
+  - number: 6
+    name: collect-results
+    script: step-collect-results.py
+    notes: ""

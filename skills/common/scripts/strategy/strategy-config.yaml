@@ -1,0 +1,1120 @@
+sniff_routing:
+  order:
+  - air
+  - il2cpp
+  - unreal
+  - unity-mono
+  - xamarin
+  - flutter
+  - cocos-creator
+  - cocos2dx
+  - libgdx
+  - defold
+  - gamemaker
+  - android
+  patterns:
+    air:
+    - META-INF/AIR/application.xml
+    - assets/META-INF/AIR/application.xml
+    il2cpp:
+    - lib/.*/libil2cpp\.so
+    unity-mono:
+    - lib/.*/GameAssembly\.dll
+    cocos2dx:
+    - libcocos2d.*\.so
+    - libMyGame\.so
+    - libgame\.so
+    cocos-creator:
+    - libcocos2djs\.so
+    - src/settings\.js
+    - assets/main/config\.json
+    libgdx:
+    - lib/.*/libgdx\.so
+    - com/badlogic/gdx/
+    defold:
+    - assets/game\.dmanifest
+    - assets/game\.projectc
+    - assets/game\.arcd
+    gamemaker:
+    - assets/game\.droid
+    - lib/.*/libyoyo\.so
+    android:
+    - classes[0-9]*\.dex
+    flutter:
+    - libflutter\.so
+    - libapp\.so
+    unreal:
+    - libUE4\.so
+    - libUnreal.*\.so
+    - libUnrealEngine.*\.so
+    xamarin:
+    - libmonodroid\.so
+    - libmono-native\.so
+    - libxamarin-app\.so
+stage_routing:
+  air:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory: []
+  il2cpp:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory:
+    - '01'
+    - '02'
+    - '03'
+    - '04'
+    - '06'
+    - 08
+    - '10'
+    - '12'
+    - '14'
+    - '16'
+  unreal:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory: []
+  unity-mono:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory: []
+  xamarin:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory: []
+  flutter:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory: []
+  cocos-creator:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory: []
+  cocos2dx:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory: []
+  libgdx:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory: []
+  defold:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory: []
+  gamemaker:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory: []
+  android:
+    stages:
+    - static-analyze
+    - preprocess-build
+    - sdk-network-removal
+    - sdk-network-device-verify
+    - revenue-forwarding
+    - revenue-device-verify
+    - ui-hide
+    - ui-hide-device-verify
+    - font-replace
+    - font-device-verify
+    - text-hanization
+    - text-device-verify
+    - image-hanization
+    - image-device-verify
+    - record-project-files
+    mandatory:
+    - '01'
+    - '02'
+    - '03'
+    - '04'
+    - '05'
+    - 08
+    - 09
+    - '10'
+    - '12'
+    - '14'
+    - '16'
+stage_details:
+  il2cpp:
+    '01':
+      id: '01'
+      name: static-analyze
+      name_zh: 通用静态分析
+      function: 通用静态分析（jadx + smali + hook 候选）
+      role: sources/ 存在 + findings.md 含 MainActivity/SDK 入口
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-static-analyze.py
+      outputs:
+      - crackings/<type>/<Name>/raw/03-jadx/sources/
+      - crackings/<type>/<Name>/stages/01-static-analyze/findings.md
+      notes:
+      - air/cocos/unity-mono/unreal/flutter/defold 等 type 各自有 type-specific 变体
+    '02':
+      id: '02'
+      name: preprocess-build
+      name_zh: 预处理构建检测
+      function: 预处理构建（10步：FakerAndroid 优先，失败则 apktool 兜底）
+      role: gradlew assembleRelease 退出 0 + apksigner v1+v2+v3 + JDK=11 / AGP=7.4.2
+        / Gradle=7.5.1 / compileSdk=34
+      mode: automatic
+      verify: false
+      script: skills/strategy/il2cpp-strategy-skill/scripts/workflow/sub-stage-preprocess-build.py
+      outputs:
+      - crackings/<type>/<Name>/project/{settings.gradle,app/build.gradle,app/src/main/cpp/,app/jniLibs/}
+      - crackings/<type>/<Name>/project/app/javaScaffoding/classes.all.dex.jar
+      - crackings/<type>/<Name>/stages/02-preprocess-build/build-report.md
+      notes:
+      - 步骤1（环境初始化）：加载 env.sh → 解析 APK 路径/名称 → 创建 crackings/output-projects 目录
+      - 步骤2（计算 MD5）：md5sum source.apk → source.apk.md5
+      - 步骤3（解包）：FakerAndroid 优先，失败则 apktool 兜底
+      - 步骤4（清理 res/values/）：只保留 strings.xml，删除 strings-*.xml
+      - 步骤5（Android 资源修复）：$文件名 / v31 / 损坏 vector/selector / 空 intent
+      - 步骤6（AndroidManifest 修复）：package 属性 / splits / Android 13+ 属性 / 空 intent
+      - 步骤7（build.gradle namespace 注入）：动态提取包名 → 写入 namespace
+      - 步骤8（模板集成）：AS 工程存在时执行：MainActivity/JniBridge/App/SDKUtils/native-lib/And64InlineHook/CMakeLists
+      - 步骤9（smali → jar）：smali 目录编译为 classes.all.dex.jar（所有类型均执行）
+      - 步骤10（编译测试）：gradlew assembleRelease 验证
+    '03':
+      id: '03'
+      name: sdk-network-removal
+      name_zh: 去SDK + 去网络检测（合并）
+      function: 去第三方SDK + 去网络检测（15 步：原 10 步 SDK 移除 + 网络检测收集 + 桩化 + smali→jar + 统一报告）
+      role: 3 报告（3rd-party-sdk.yaml + network-detection.yaml + sdk-network-report.yaml）+
+        manifest SDK 关键字=0 + 引擎 .so 保留 + gradlew 0
+      mode: automatic
+      verify: false
+      script: skills/strategy/il2cpp-strategy-skill/scripts/workflow/sub-stage-sdk-network-removal.py
+      handlers:
+        collect:
+          func: skills/strategy/il2cpp-strategy-skill/scripts/common/handlers/sdk_network/collect.py:Il2cppSdkNetworkCollectHandler
+        clean:
+          func: skills/strategy/il2cpp-strategy-skill/scripts/common/handlers/sdk_network/clean.py:Il2cppSdkNetworkCleanHandler
+        stub:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/sdk_network/stub.py:stub
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:build
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/sdk_network/report.py:report
+      outputs:
+      - crackings/<type>/<Name>/stages/03-sdk-network-removal/3rd-party-sdk.yaml
+      - crackings/<type>/<Name>/stages/03-sdk-network-removal/sdk-removal-report.yaml
+      - crackings/<type>/<Name>/stages/03-sdk-network-removal/network-detection.yaml
+      - crackings/<type>/<Name>/stages/03-sdk-network-removal/sdk-network-report.yaml
+      - crackings/<type>/<Name>/stages/03-sdk-network-removal/third-party-libs/
+      config_driven:
+        registry_path: skills/common/third-party-removal-strategy-skill/references/third-party-sdk-removal-registry.yaml
+        loader_path: skills/common/third-party-removal-strategy-skill/scripts/load_sdk_removal_registry.py
+        sections:
+        - manifest_drop_exact
+        - manifest_drop_keyword_contains
+        - so_early_kill
+        - so_keyword_contains
+        - raw_apk_drop_entries
+        - build_config_stubs
+        - smali_exclude_prefixes
+        - meta_data_force_value
+        - engine_so_keep
+      notes:
+      - '原 04 (3rd-party-sdk-removal) + 原 06 (network-detection-removal)
+        合并'
+      - 步骤1：收集 SDK 信息（manifest + lib/*.so 扫描）
+      - 步骤2：加载/更新清单 [FLOWFIX 2026-08-18]
+      - 步骤3：清理 AndroidManifest（保留 INTERNET 权限）
+      - 步骤4：清理 SDK .so（保留 libil2cpp.so）
+      - 步骤5：清理 smali（按清单 smali_exclude_prefixes）
+      - 步骤6：hook/桩化
+      - 步骤7：关键字验证
+      - 步骤8：生成 BuildConfig stubs（AppLovin mediation reflection）
+      - 步骤9：重建 apktool 工作树
+      - 步骤10：收集网络检测方法（smali + step1-signatures/）
+      - 步骤11：网络检测桩化（isNetworkAvailable/VersionChecker）
+      - 步骤12：smali→jar（extract-filtered-smali-jars.py）
+      - 步骤13：gradlew assembleRelease
+      - 步骤14：生成 hook-plan.yaml
+      - 步骤15：生成 sdk-network-report.yaml（SDK + 网络两段合一）
+      - 成功 → 强制固化
+      - 清单缺失时 raise SystemExit，强制修复清单（不静默回退）
+    '04':
+      id: '04'
+      name: sdk-network-device-verify
+      name_zh: 真机验收（SDK + 网络检测合并）
+      function: 真机验收（普通模式 + 飞行模式，2 段 device_verify_run）
+      role: 普通模式 verify_app_alive + 飞行模式 verify_app_alive + 两张截图 + 无 FATAL
+      mode: automatic
+      verify: true
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-sdk-network-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/04-sdk-network-device-verify/verify-report.md
+      - crackings/<type>/<Name>/stages/04-sdk-network-device-verify/screenshot-normal.png
+      - crackings/<type>/<Name>/stages/04-sdk-network-device-verify/screenshot-airplane.png
+      notes:
+      - '原 05 + 原 07 合并；il2cpp 复用 common 版验收脚本'
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/sdk_network_device_verify/verify.py:CommonSdkNetworkDeviceVerifyVerifyHandler
+    '05':
+      id: '05'
+      name: revenue-forwarding
+      name_zh: 激励视频转发
+      function: 激励视频转发（5 步：信息收集 → 策略选择 → hook 注册 → 调用链检查 → yaml 报告）
+      role: revenue-detection.yaml 存在 + Hooked_* ≥1 + callJava("showRewardVideo")
+        ≥1 + A64HookFunction 注册 + 调用链完整
+      mode: automatic
+      verify: false
+      script: skills/strategy/il2cpp-strategy-skill/scripts/workflow/sub-stage-reward-video-forwarding.py
+      outputs:
+      - crackings/<type>/<Name>/stages/05-revenue-forwarding/revenue-detection.yaml
+      - crackings/<type>/<Name>/stages/05-revenue-forwarding/revenue-report.yaml
+      - crackings/<type>/<Name>/project/app/app/src/main/cpp/native-lib.cpp
+      - crackings/<type>/<Name>/project/app/app/src/main/java/com/android/boot/MainActivity.java
+      notes:
+      - 步骤1（信息收集）：从 step1-signatures/（dump.cs / il2cpp.h / script.json）中收集激励视频方法
+      - 步骤2（策略选择）：il2cpp → native_hook：注入 Hooked_* + callJava("showRewardVideo")
+      - 步骤3（hook 注册）：il2cpp → 使用 A64HookFunction（And64InlineHook），注册到 "Hook Engine
+        Initialized" 前
+      - 步骤4（调用链检查）：MainActivity → SDKUtils.showRewardVideo()，函数是否默认返回 true
+      - 步骤5（报告生成）：生成 revenue-report.yaml（yaml 格式）
+      - RVA 来源：hook-plan.yaml（category=Ad），无则使用 DEFAULT_HOOKS
+      - 成功 → 强制固化
+      handlers:
+        detect:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/revenue_forwarding/detect.py:CommonRevenueForwardingDetectHandler
+        forward:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/revenue_forwarding/forward.py:CommonRevenueForwardingForwardHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/revenue_forwarding/report.py:CommonRevenueForwardingReportHandler
+    '06':
+      id: '06'
+      name: revenue-device-verify
+      name_zh: 真机验收（激励）
+      function: 真机验收（激励）
+      role: adb logcat [xNative] showVideo 命中 + 进程存活 30s + 无 native crash（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/strategy/il2cpp-strategy-skill/scripts/workflow/sub-stage-reward-video-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/06-revenue-device-verify/verify-report.md
+      - crackings/<type>/<Name>/stages/06-revenue-device-verify/screenshot.png
+      notes:
+      - 适用：JNI 边界引擎
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/revenue_device_verify/verify.py:CommonRevenueDeviceVerifyVerifyHandler
+    '07':
+      id: '07'
+      name: ui-hide
+      name_zh: 去功能点
+      function: 去功能点（UI 隐藏 + 区域裁剪）
+      role: HookedBehaviour_set_isActiveAndEnabled 或位置移出 hook ≥1 + 不影响核心流程
+      mode: automatic
+      verify: false
+      script: skills/strategy/il2cpp-strategy-skill/scripts/workflow/sub-stage-ui-hide.py
+      outputs:
+      - crackings/<type>/<Name>/project/app/app/src/main/cpp/native-lib.cpp
+      - crackings/<type>/<Name>/stages/10-ui-hide/hide-plan.yaml
+      handlers:
+        analyze:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/ui_hide/analyze.py:CommonUiHideAnalyzeHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/ui_hide/report.py:CommonUiHideReportHandler
+    '08':
+      id: '08'
+      name: ui-hide-device-verify
+      name_zh: 真机验收（去功能点）
+      function: 真机验收（去功能点）
+      role: 目标按钮不可见/不可点击 + 布局未变形 + 核心玩法仍可进入（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/strategy/il2cpp-strategy-skill/scripts/workflow/sub-stage-ui-hide-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/11-ui-hide-device-verify/verify-report.md
+      - crackings/<type>/<Name>/stages/11-ui-hide-device-verify/screenshot.png
+      notes:
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/ui_hide_device_verify/verify.py:CommonUiHideDeviceVerifyVerifyHandler
+    '09':
+      id: '09'
+      name: font-replace
+      name_zh: 字体替换
+      function: 字体替换（中文字体注入 res/font/）
+      role: 中文字体已落 res/font/ + Typeface.createFromAsset 加载无异常
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-font-replace.py
+      outputs:
+      - crackings/<type>/<Name>/project/app/app/src/main/res/font/notosanssc.ttf
+      handlers:
+        analyze:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/font_replace/analyze.py:CommonFontReplaceAnalyzeHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/font_replace/report.py:CommonFontReplaceReportHandler
+    '10':
+      id: '10'
+      name: font-device-verify
+      name_zh: 真机验收（字体）
+      function: 真机验收（字体）
+      role: OCR 抓屏可见中文字符 + 字体加载无 RuntimeException（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-font-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/13-font-device-verify/verify-report.md
+      - crackings/<type>/<Name>/stages/13-font-device-verify/screenshot.png
+      notes:
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/font_device_verify/verify.py:CommonFontDeviceVerifyVerifyHandler
+    '11':
+      id: '11'
+      name: text-hanization
+      name_zh: 文本汉化操作
+      function: 文本汉化操作（strings.xml + hanization_map.h）
+      role: hanization_map.h HANIZATION_MAP 计数 ≥200 + values-zh-rCN/strings.xml 非空
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-text-hanization.py
+      outputs:
+      - crackings/<type>/<Name>/project/app/app/src/main/cpp/hanization_map.h
+      - crackings/<type>/<Name>/project/app/app/src/main/res/values-zh-rCN/strings.xml
+      handlers:
+        analyze:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/text_hanization/analyze.py:CommonTextHanizationAnalyzeHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/text_hanization/report.py:CommonTextHanizationReportHandler
+    '12':
+      id: '12'
+      name: text-device-verify
+      name_zh: 真机验收（文本）
+      function: 真机验收（文本）
+      role: OCR 主流程页面命中至少一处中文字符串 + 占位符 %s/%d 保留（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-text-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/15-text-device-verify/verify-report.md
+      - crackings/<type>/<Name>/stages/15-text-device-verify/ocr-screenshots/
+      notes:
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/text_device_verify/verify.py:CommonTextDeviceVerifyVerifyHandler
+    '13':
+      id: '13'
+      name: image-hanization
+      name_zh: 图片汉化操作
+      function: 图片汉化操作（含文字 PNG 重绘）
+      role: images-manifest.yaml 状态闭环 + 主流程 20+ 张含文字图片已替换 + 9-patch 边界保留
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-image-hanization.py
+      outputs:
+      - crackings/<type>/<Name>/project/app/app/src/main/res/drawable*/<translated>.png
+      - crackings/<type>/<Name>/stages/16-image-hanization/images-manifest.yaml
+      handlers:
+        analyze:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/image_hanization/analyze.py:CommonImageHanizationAnalyzeHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/image_hanization/report.py:CommonImageHanizationReportHandler
+    '14':
+      id: '14'
+      name: image-device-verify
+      name_zh: 真机验收（图片）
+      function: 真机验收（图片）
+      role: OCR 抓屏主流程页面图片含中文 + 无变形/拉伸/黑边（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-image-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/17-image-device-verify/verify-report.md
+      - crackings/<type>/<Name>/stages/17-image-device-verify/screenshot.png
+      notes:
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/image_device_verify/verify.py:CommonImageDeviceVerifyVerifyHandler
+    '15':
+      id: '15'
+      name: record-project-files
+      name_zh: 记录工程文件
+      function: 记录工程文件（crackings/<type>/<Name>/project/ 工程清单 + dir-index.yaml）
+      role: dir-index.yaml 反映 crackings/<type>/<Name>/project/ 全部生成文件/目录 + manifest.yaml
+        字段完整
+      mode: automatic
+      verify: false
+      script: skills/strategy/il2cpp-strategy-skill/scripts/workflow/sub-stage-record-project-files.py
+      outputs:
+      - crackings/<type>/<Name>/dir-index.yaml
+      - crackings/<type>/<Name>/output-project-manifest.yaml
+      handlers:
+        record:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/record_project_files/record.py:CommonRecordProjectFilesRecordHandler
+    M1:
+      id: M1
+      name: sniff
+      name_zh: 类型嗅探
+      function: 类型嗅探（unzip -l + sniff_patterns 匹配）
+      role: findings.md 含类型段
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-sniff.py
+      outputs:
+      - crackings/<type>/<Name>/findings.md
+      notes:
+      - 子阶段 01-xapk-merge（sub-stage-xapk-merge.py）是嗅探阶段的 helper：XAPK → fat APK 合并
+    M2:
+      id: M2
+      name: assess
+      name_zh: 难度评估
+      function: 难度评估（6 维加权 → grade S/A/B/C/D/F）
+      role: difficulty.json grade 字段非空
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-assess.py
+      outputs:
+      - crackings/<type>/<Name>/difficulty.json
+      - crackings/<type>/<Name>/raw/assessment.md
+    M3:
+      id: M3
+      name: final-check
+      name_zh: 最终验收
+      function: 最终验收（6 条硬指标全过）
+      role: OBJECTIVES.md §1 六条硬指标全过：编译/运行/汉化/SDK 移除/重签名 v1+v2+v3/网络检测移除
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-final-check.py
+      outputs:
+      - crackings/<type>/<Name>/stages/23-final-check/final-report.md
+    M4:
+      id: M4
+      name: cleanup
+      name_zh: 清理临时空间
+      function: 清理临时空间（仅保留最终产物）
+      role: 中间产物已删除，最终保留 crackings/<type>/<Name>/project/{app/, patched.apk, my.keystore.jks
+        → symlink, gradle/, *.gradle*, settings.gradle*}
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-cleanup.py
+      outputs: []
+  android:
+    '01':
+      id: '01'
+      name: static-analyze
+      name_zh: 通用静态分析
+      function: 通用静态分析（jadx + smali + SDK 扫描 + 入口定位）
+      role: sources/ 存在且含 Java 文件 + findings.md 含入口信息
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-static-analyze.py
+      outputs:
+      - crackings/<type>/<Name>/raw/03-jadx/sources/
+      - crackings/<type>/<Name>/stages/01-static-analyze/findings.md
+      notes:
+      - air/cocos/unity-mono/unreal/flutter/defold 等 type 各自有 type-specific 变体
+    '02':
+      id: '02'
+      name: preprocess-build
+      name_zh: 预处理构建检测
+      function: 预处理构建检测（apktool 解包 → 整理 AS 项目 → 注入模板文件 → 工具链规范 → ProGuard → 签名 → 编译测试）
+      role: AndroidManifest.xml + apktool.yml + smali/ 存在 + source.apk.md5 非空 + gradlew
+        assembleRelease 0 + apksigner v1+v2+v3 + JDK 11 / AGP 7.4.2 / Gradle 7.5.1
+        / compileSdk 33
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-preprocess-build.py
+      outputs:
+      - crackings/<type>/<Name>/source.apk.md5
+      - crackings/<type>/<Name>/raw/04-apktool/{AndroidManifest.xml,apktool.yml,smali/}
+      - crackings/<type>/<Name>/project/app/{settings.gradle,app/build.gradle,gradle/wrapper/}
+      - crackings/<type>/<Name>/project/app/app/src/main/smali/
+      - crackings/<type>/<Name>/project/app/app/src/main/java/com/android/boot/{MainActivity.java,JniBridge.java,App.java}
+      - crackings/<type>/<Name>/project/my.keystore.jks
+      - crackings/<type>/<Name>/stages/02-preprocess-build/build-report.md
+      notes:
+      - 7 步统一流程：apktool 解包（含自动修复 split 配置：移除 android:requiredSplitTypes / com.android.vending.splits.required）→
+        整理 AS 项目（保留原 smali）→ 注入模板文件（MainActivity/JniBridge/App + manifest 入口替换）→ 工具链规范（AGP
+        7.4.2 / Gradle 7.5.1 / JDK 11 / compileSdk 33）→ ProGuard keep → 生成签名（my.keystore.jks
+        + signingConfigs）→ 编译测试
+      - 重打包签名 + AS 工程化已并入本阶段，不再作为独立子阶段
+      - 原 smali 保留在 app/src/main/smali/，不转 dex
+    '03':
+      id: '03'
+      name: sdk-network-removal
+      name_zh: 去SDK + 去网络检测（合并）
+      function: 去第三方SDK + 去网络检测（5 步：信息收集 → 统一清理 → 统一桩化 → 一次构建 → 统一报告）
+      role: 3rd-party-sdk.yaml 存在 + Manifest SDK 关键字=0 + .so 引擎保留 + smali 已转 jar +
+        gradlew 0
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-sdk-network-removal.py
+      outputs:
+      - crackings/<type>/<Name>/stages/03-sdk-network-removal/3rd-party-sdk.yaml
+      - crackings/<type>/<Name>/stages/03-sdk-network-removal/sdk-removal-report.yaml
+      - crackings/<type>/<Name>/stages/03-sdk-network-removal/third-party-libs/
+      notes:
+      - '原 04 (3rd-party-sdk-removal) + 原 06 (network-detection-removal)
+        合并为新 04 (sdk-network-removal)'
+      - 步骤1（收集 SDK 信息）：扫描 manifest + lib/*.so + smali + step1-signatures/，生成 3rd-party-sdk.yaml
+      - 步骤2（清理 manifest）：按 3rd-party-sdk.yaml 移除权限/组件
+      - 步骤3（清理 .so）：按 3rd-party-sdk.yaml 删除第三方 SDK 的 .so，保留引擎 .so
+      - 步骤4（清理 smali）：按 3rd-party-sdk.yaml 删除 smali，但保留 jar 转换所需类
+      - 步骤5（hook/桩化）：对无法删除的 SDK 初始化/回调函数做桩化
+      - 步骤6（关键字验证）：grep 检查 manifest/smali 中无 SDK 残留关键字
+      - 步骤7（生成报告）：sdk-removal-report.yaml，记录清理结果
+      - 步骤8（smali→jar）：将保留的 smali 转 jar，放入 `app/javaScaffoding/` 中，并在 build.gradle
+        导入
+      - 步骤9（gradlew 构建）：./gradlew assembleRelease，验证重打包成功
+      - 成功 → 强制固化
+      - type-specific 工具：sub-stage-remove-sdks / sub-stage-defold-manifest-clean 等
+      handlers:
+        collect:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/sdk_network/collect.py:CommonSdkNetworkCollectHandler
+        clean:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/sdk_network/clean.py:CommonSdkNetworkCleanHandler
+        stub:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/sdk_network/stub.py:CommonSdkNetworkStubHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/sdk_network/report.py:CommonSdkNetworkReportHandler
+    '04':
+      id: '04'
+      name: sdk-network-device-verify
+      name_zh: 真机验收（SDK + 网络检测合并）
+      function: 真机验收（SDK 移除 + 网络检测移除，2 段：普通模式 + 飞行模式）
+      role: 安装成功 + 启动 + 多窗口存活 + 5s 无 FATAL（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-sdk-network-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/04-sdk-network-device-verify/verify-screenshot.png
+      notes:
+      - '原 04 (3rd-party-sdk-removal) + 原 06 (network-detection-removal)
+        合并为新 04 (sdk-network-removal)'
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/sdk_network_device_verify/verify.py:CommonSdkNetworkDeviceVerifyVerifyHandler
+    '05':
+      id: '05'
+      name: revenue-forwarding
+      name_zh: 激励视频转发
+      function: 激励视频转发（通用方案）
+      role: 查找激励视频相关 smali + SDKUtils.showRewardedVideo 准备
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-revenue-forwarding.py
+      outputs:
+      - crackings/<type>/<Name>/stages/05-revenue-forwarding/revenue-found.txt
+      notes:
+      - 适用：JNI 边界引擎
+      handlers:
+        detect:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/revenue_forwarding/detect.py:CommonRevenueForwardingDetectHandler
+        forward:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/revenue_forwarding/forward.py:CommonRevenueForwardingForwardHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/revenue_forwarding/report.py:CommonRevenueForwardingReportHandler
+    '06':
+      id: '06'
+      name: revenue-device-verify
+      name_zh: 真机验收（激励）
+      function: 激励视频真机验收
+      role: verify_app_alive 多窗口存活 + 5s 无 FATAL（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-revenue-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/06-revenue-device-verify/verify-report.md
+      notes:
+      - 适用：JNI 边界引擎
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/revenue_device_verify/verify.py:CommonRevenueDeviceVerifyVerifyHandler
+    '07':
+      id: '07'
+      name: ui-hide
+      name_zh: 去功能点
+      function: 去功能点（无用功能/按钮/UI 隐藏）
+      role: hide-plan.yaml 存在且含去功能点清单
+      mode: interactive
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-ui-hide.py
+      outputs:
+      - crackings/<type>/<Name>/stages/10-ui-hide/hide-plan.yaml
+      handlers:
+        analyze:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/ui_hide/analyze.py:CommonUiHideAnalyzeHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/ui_hide/report.py:CommonUiHideReportHandler
+    '08':
+      id: '08'
+      name: ui-hide-device-verify
+      name_zh: 真机验收（去功能点）
+      function: 去功能点真机验收
+      role: 目标按钮不可见 + 核心玩法可进 + 布局未变形（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-ui-hide-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/11-ui-hide-device-verify/verify-screenshot.png
+      notes:
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/ui_hide_device_verify/verify.py:CommonUiHideDeviceVerifyVerifyHandler
+    '09':
+      id: '09'
+      name: font-replace
+      name_zh: 字体替换
+      function: 字体替换（注入中文字体）
+      role: 中文字体已落 res/font/ 或 assets/fonts/
+      mode: interactive
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-font-replace.py
+      outputs:
+      - crackings/<type>/<Name>/project/app/app/src/main/res/font/notosanssc.ttf
+      handlers:
+        analyze:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/font_replace/analyze.py:CommonFontReplaceAnalyzeHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/font_replace/report.py:CommonFontReplaceReportHandler
+    '10':
+      id: '10'
+      name: font-device-verify
+      name_zh: 真机验收（字体）
+      function: 字体替换真机验收
+      role: 安装 + 启动无崩溃 + 字体加载无 RuntimeException（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-font-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/13-font-device-verify/verify-screenshot.png
+      notes:
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/font_device_verify/verify.py:CommonFontDeviceVerifyVerifyHandler
+    '11':
+      id: '11'
+      name: text-hanization
+      name_zh: 文本汉化操作
+      function: 文本汉化操作（strings.xml 翻译 + 占位符保留）
+      role: strings-collected.json 非空 + values-zh-rCN/strings.xml 翻译完整 + 占位符 %s/%d
+        保留
+      mode: interactive
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-text-hanization.py
+      outputs:
+      - crackings/<type>/<Name>/stages/14-text-hanization/{strings-collected.json,translations.json}
+      handlers:
+        analyze:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/text_hanization/analyze.py:CommonTextHanizationAnalyzeHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/text_hanization/report.py:CommonTextHanizationReportHandler
+    '12':
+      id: '12'
+      name: text-device-verify
+      name_zh: 真机验收（文本）
+      function: 文本汉化真机验收（OCR）
+      role: OCR 命中中文 + 字体加载无异常（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-text-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/15-text-device-verify/verify-screenshot.png
+      notes:
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/text_device_verify/verify.py:CommonTextDeviceVerifyVerifyHandler
+    '13':
+      id: '13'
+      name: image-hanization
+      name_zh: 图片汉化操作
+      function: 图片汉化操作（替换含文字图片）
+      role: replacements/ 存在 + images-manifest.yaml 状态闭环 + 9-patch 边界保留
+      mode: interactive
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-image-hanization.py
+      outputs:
+      - crackings/<type>/<Name>/stages/16-image-hanization/{replacements/,images-manifest.yaml}
+      handlers:
+        analyze:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/image_hanization/analyze.py:CommonImageHanizationAnalyzeHandler
+        build:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/build.py:CommonBuildHandler
+        report:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/image_hanization/report.py:CommonImageHanizationReportHandler
+    '14':
+      id: '14'
+      name: image-device-verify
+      name_zh: 真机验收（图片）
+      function: 图片汉化真机验收
+      role: OCR 抓屏主流程页面图片含中文 + 无变形/拉伸/黑边（成功→强制固化）
+      mode: automatic
+      verify: true
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-image-device-verify.py
+      outputs:
+      - crackings/<type>/<Name>/stages/17-image-device-verify/verify-screenshot.png
+      notes:
+      - 成功 → 强制固化
+      handlers:
+        verify:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/image_device_verify/verify.py:CommonImageDeviceVerifyVerifyHandler
+    '15':
+      id: '15'
+      name: record-project-files
+      name_zh: 记录工程文件
+      function: 记录工程文件（crackings/<type>/<Name>/project/ 工程清单 + dir-index.yaml）
+      role: dir-index.yaml 反映 crackings/<type>/<Name>/project/ 全部生成文件/目录 + manifest.yaml
+        字段完整
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-record-project-files.py
+      outputs:
+      - crackings/<type>/<Name>/dir-index.yaml
+      - crackings/<type>/<Name>/output-project-manifest.yaml
+      handlers:
+        record:
+          func: skills/common/general-strategy-skill/scripts/common/handlers/record_project_files/record.py:CommonRecordProjectFilesRecordHandler
+    M1:
+      id: M1
+      name: sniff
+      name_zh: 类型嗅探
+      function: 类型嗅探（unzip -l + sniff_patterns 匹配）
+      role: findings.md 含类型段
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-sniff.py
+      outputs:
+      - crackings/<type>/<Name>/findings.md
+      notes:
+      - 子阶段 01-xapk-merge（sub-stage-xapk-merge.py）是嗅探阶段的 helper：XAPK → fat APK 合并
+    M2:
+      id: M2
+      name: assess
+      name_zh: 难度评估
+      function: 难度评估（6 维加权 → grade S/A/B/C/D/F）
+      role: difficulty.json grade 字段非空
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-assess.py
+      outputs:
+      - crackings/<type>/<Name>/difficulty.json
+      - crackings/<type>/<Name>/raw/assessment.md
+    M3:
+      id: M3
+      name: final-check
+      name_zh: 最终验收
+      function: 最终验收（6 条硬指标全过）
+      role: OBJECTIVES.md §1 六条硬指标全过：编译/运行/汉化/SDK 移除/重签名 v1+v2+v3/网络检测移除
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-final-check.py
+      outputs:
+      - crackings/<type>/<Name>/stages/23-final-check/final-report.md
+    M4:
+      id: M4
+      name: cleanup
+      name_zh: 清理临时空间
+      function: 清理临时空间（仅保留最终产物）
+      role: 中间产物已删除，最终保留 crackings/<type>/<Name>/project/{app/, patched.apk, my.keystore.jks
+        → symlink, gradle/, *.gradle*, settings.gradle*}
+      mode: automatic
+      verify: false
+      script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-cleanup.py
+      outputs: []
+metadata:
+  tools:
+    air:
+      static_primary: jadx + AIR SDK + ffdec
+      static_backup: ''
+      dynamic: Frida + And64InlineHook
+      build: apktool 重打包 + smali patch
+    il2cpp:
+      static_primary: Il2CppInspectorPro
+      static_backup: rodroid / Il2CppDumper
+      dynamic: Frida + And64InlineHook
+      build: FakerAndroid fake（产出自带 cpp/jni hook 骨架 + AS 工程）
+    unity-mono:
+      static_primary: ILSpy
+      static_backup: dnSpy
+      dynamic: Frida + And64InlineHook
+      build: ILSpy 重编译 .NET DLL + 重打包
+    cocos2dx:
+      static_primary: cocos2d-console + readelf + objdump
+      static_backup: IDA / Ghidra
+      dynamic: Frida + And64InlineHook
+      build: apktool 重打包 + native hook 集成
+    cocos-creator:
+      static_primary: cc-reverse（JSC 解密 + 项目重建）
+      static_backup: reverse（XXTEA 密钥提取）+ cocos2d-dec（批处理解密）
+      dynamic: Frida + frida-cocosjs（运行时密钥） + And64InlineHook
+      build: apktool 重打包 + JS patch
+    libgdx:
+      static_primary: jadx（com.badlogic.gdx + 业务类引用）+ apktool
+      static_backup: ''
+      dynamic: adb + logcat（libGDX 内置 GLSurfaceView） + Frida（如需 Java 层 hook） + And64InlineHook
+      build: apktool 重打包 + smali patch（资源 / manifest / .so 清理）
+    defold:
+      static_primary: jadx + strings/readelf（引擎判定）+ apktool
+      static_backup: ''
+      dynamic: adb + logcat（bklang tag） + And64InlineHook
+      build: apktool 重打包 + smali patch（禁止物理删 SDK smali，JNI 依赖）
+    gamemaker:
+      static_primary: jadx + strings/readelf（YYObjectBase/RValue 引擎判定）+ apktool
+      static_backup: UndertaleModTool（.droid 资产浏览，仅参考）
+      dynamic: adb + logcat（yoyo/runner/GameMaker tag） + And64InlineHook
+      build: apktool 重打包 + smali patch（禁止物理删 SDK smali，RunnerJNILib JNI 依赖；禁止删 libyoyo.so
+        引擎本体）
+    android:
+      static_primary: jadx
+      static_backup: ''
+      dynamic: Frida + And64InlineHook
+      build: smali patch + apktool 重打包
+    flutter:
+      static_primary: Flutter 反编译（blutter / reFlutter / Dart SDK）
+      static_backup: IDA（分析 libapp.so）
+      dynamic: Frida + And64InlineHook
+      build: apktool 重打包 + Dart patch
+    unreal:
+      static_primary: UE 资源提取工具（UE dumper / FModel）
+      static_backup: IDA + Ghidra
+      dynamic: Frida + And64InlineHook
+      build: apktool 重打包 + native hook
+    xamarin:
+      static_primary: ILSpy / dnSpy（反编译 managed DLL）
+      static_backup: ''
+      dynamic: Frida + And64InlineHook
+      build: apktool 重打包 + managed DLL 替换
+  notes:
+    air: 'SWF 文本替换走 22；嵌入字体处理走 air-20；SWF 反编译用 ffdec'
+    il2cpp: '阶段重排为 01–29 线性连续：27 用户阶段 + sniff(01) + assess(02)。
+
+      每个修改阶段紧跟独立真机验收（07/11/13/15/17/19/21/23/25，成功→强制固化）。
+
+      强制阶段 21 个：01 02 03 04 05 06 07 08 09 10 11 12 14 16 18 20 22 24 26 28 29。
+
+      旧 15 阶段已完整迁移到 01-18（无 legacy_stage_map，历史映射不再保留）。
+
+      模板文件: skills/common/scripts/template-files/{MainActivity.template.java, JniBridge.template.java,
+      SDKUtils.java}。
+
+      所有新生成脚本必须固化到 skills/strategy/il2cpp-strategy-skill/scripts/{workflow,common}/。'
+    unity-mono: '.NET DLL 反编译，il2cpp 的 predecessor；复用 android
+      通用骨架 16-19 之外的所有阶段（[FLOWFIX 2026-08-16] 原 12-19 → 新 16-19）'
+    cocos2dx: 'libMyGame.so 分析 + Lua 脚本提取走 cocos-05'
+    cocos-creator: 'Cocos Creator 2.x/3.x（JS/TS）；cc-reverse
+      自动检测版本、解密 XXTEA .jsc、提取场景/预制体/Spine 资源、还原为可读 TS/JS'
+    libgdx: 'libGDX 引擎：lib/<abi>/libgdx.so + com/badlogic/gdx/**
+      Java 框架 + AndroidApplication/Activity 入口；资源以 .atlas/.pack/.tmx/.fnt/.ttf/.ogg
+      明文打包到 assets/，部分发行方做 hash 命名二次加密（通常是 Pangle 模板池，对游戏核心玩法无作用，可安全删除）。汉化通常走 Typeface
+      TTF 替换路径（jadx 搜 createFromAsset 找字体文件名）。首个项目 JungleMarbleBlast 2026-08-06，com.cooyostudio.marble.blast。'
+    defold: Defold 引擎：lib<game>.so 内含 libdmengine.so；assets game.{dmanifest,projectc,arcd,arci}；Java
+      层 DefoldActivity + com.defold.*JNI glue；汉化走 lang pack（bk_lang_pack.zip 替换）；SDK
+      移除用 manifest 清理策略（third-party-removal:sub-stage-defold-manifest-clean.py (third-party-removal-skill)）。首个项目
+      BananaKong 2026-08-04。
+    gamemaker: GameMaker Studio 引擎：libyoyo.so 内含 YYObjectBase/RValue/Java_com_yoyogames_runner_RunnerJNILib_*；assets/game.droid（FORM..GEN8
+      magic）含 OPTN/LANG/EXTN/SOND/SPRT8/BGND/PATH/SCPT/GLOBX/SHDRX/FONT/TMLN/OBJTX/FEDS/ACRV/SEQN/TAGS/ROOMx/DAFL/EMBI/PSEM/PSYS/TPAG/TGIN8/CODE；Java
+      层 RunnerActivity + RunnerJNILib glue；GML 编译进 CODE chunk 加密（不可静态 patch）；SDK 移除用
+      manifest 清理策略（third-party-removal:sub-stage-defold-manifest-clean.py (third-party-removal-skill)
+      可复用）。跳过 21/22（图片汉化走 .droid LANG chunk 而非 res/drawable）+ 23/24（GameMaker 内部字体渲染）+
+      16/17（GML 编译加密，无法静态 patch UI）。[FLOWFIX 2026-08-16] 编号随激励/IAP 前移重排：原 07/08/13/14
+      → 新 21/22/23/24/16/17。 首个项目 FindTheDifferences 2026-08-08。
+    android: '阶段重排为 01–29 线性连续。android 通用骨架 skip 16–19
+
+      （il2cpp 专用：集成模板文件/SDKUtils/激励/IAP 转发；[FLOWFIX 2026-08-16] 原 12-19 → 新 16-19，
+      激励/IAP 已前移至 09-12）。
+
+      真机验收阶段：07 13 15 21 23 25（成功→强制固化）。
+
+      强制阶段 17 个：01 02 03 04 05 06 07 08 13 14 15 20 22 24 26 28 29。 （[FLOWFIX 2026-08-16]
+      原 09 10 11 = 飞行/去功能点/验收 → 新 13 14 15；激励/IAP 09-12 由 JNI 边界引擎按需启用）
+
+      旧 00-21 阶段已完整迁移到 01-18（无 legacy_stage_map）。
+
+      替代 2026-08-08 通用骨架（见 general-strategy-skill/PLAN-generic-skeleton-2026-08-08.md）。'
+    flutter: 'libapp.so 是 Dart AOT 编译产物，需专用工具解包'
+    unreal: 'UE4/UE5 游戏，资源包格式 .pak'
+    xamarin: '类似 Unity Mono，但运行时为 mono runtime'
+  legacy_stage_map: {}

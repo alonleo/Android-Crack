@@ -1,0 +1,14 @@
+# text-device-verify/default-action/step-register.yaml
+steps:
+  - number: 1
+    name: check-env
+    script: step-check-env.py
+    notes: ""
+  - number: 2
+    name: run-verify
+    script: step-run-verify.py
+    notes: ""
+  - number: 3
+    name: gen-report
+    script: step-gen-report.py
+    notes: ""

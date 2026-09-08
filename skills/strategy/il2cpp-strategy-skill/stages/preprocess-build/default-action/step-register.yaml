@@ -1,0 +1,34 @@
+# 02-preprocess-build/default-action/step-register.yaml
+steps:
+  - number: 01
+    name: env-init
+    script: step-env-init.py
+    notes: ""
+  - number: 02
+    name: unpack
+    script: step-unpack.py
+    notes: ""
+  - number: 03
+    name: fix-res
+    script: step-fix-res.py
+    notes: ""
+  - number: 04
+    name: fix-manifest
+    script: step-fix-manifest.py
+    notes: ""
+  - number: 05
+    name: namespace
+    script: step-namespace.py
+    notes: ""
+  - number: 06
+    name: set-gradle-identity
+    script: step-set-gradle-identity.py
+    notes: "[2026-09-02] 新增：写入 settings.gradle rootProject.name + app/build.gradle outputFileName（AGENTS §1.13 严禁手拼 gradle 命令 → 全部由子阶段注入）"
+  - number: 07
+    name: smali-to-jar
+    script: step-smali-to-jar.py
+    notes: ""
+  - number: 08
+    name: gradle-build
+    script: step-gradle-build.py
+    notes: ""

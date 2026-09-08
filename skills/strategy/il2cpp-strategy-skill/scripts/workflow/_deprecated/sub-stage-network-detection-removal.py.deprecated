@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+"""
+阶段 08 - 去除网络检测（il2cpp 专用）
+=================================================================
+原 stage-09-third-party-cleanup.py 拆分为 06 (SDK) + 08 (网络) 两部分。
+
+功能：桩化 NetworkUtil.isNetworkAvailable / ConnectivityManager.isActive 等，
+确保飞行模式下游戏可正常启动、加载、进入游戏。
+
+输入：crackings/<type>/<Name>/project/app/src/main/smali*/com/.../NetworkUtil.smali
+输出：桩化后的 smali（同路径，in-place 替换方法体为 const/4 v0, 0x1）
+
+真机验收：stage-09-airplane-mode-device-verify.py（飞行模式启动）
+"""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[5]
+
+
+def main() -> int:
+    """网络检测移除：已无可执行逻辑（原实现 stage-09-third-party-cleanup.py 已删除），按幂等空操作继续。"""
+    print("[stage-08] 原实现已删除；网络检测移除逻辑已内联到 sub-stage-3rd-party-sdk-removal.py，按幂等空操作继续", file=sys.stderr)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

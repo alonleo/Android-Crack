@@ -1,0 +1,30 @@
+# revenue-forwarding/default-action/step-register.yaml
+steps:
+  - number: 1
+    name: inject-hooks
+    script: step-inject-hooks.py
+    notes: ""
+  - number: 2
+    name: check-callchain
+    script: step-check-callchain.py
+    notes: ""
+  - number: 3
+    name: scan-revenue
+    script: step-scan-revenue.py
+    notes: ""
+  - number: 4
+    name: write-detection
+    script: step-write-detection.py
+    notes: ""
+  - number: 5
+    name: smali-to-jar
+    script: step-smali-to-jar.py
+    notes: ""
+  - number: 6
+    name: gradle-build
+    script: step-gradle-build.py
+    notes: ""
+  - number: 7
+    name: gen-report
+    script: step-gen-report.py
+    notes: ""

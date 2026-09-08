@@ -1,0 +1,34 @@
+# 03-sdk-network-removal/default-action/step-register.yaml
+steps:
+  - number: 01
+    name: scan-manifest
+    script: step-scan-manifest.py
+    notes: ""
+  - number: 02
+    name: scan-network
+    script: step-scan-network.py
+    notes: ""
+  - number: 03
+    name: load-registry
+    script: step-load-registry.py
+    notes: ""
+  - number: 04
+    name: clean-all
+    script: step-clean-all.py
+    notes: ""
+  - number: 05
+    name: smali-to-jar
+    script: step-smali-to-jar.py
+    notes: ""
+  - number: 06
+    name: gradle-build
+    script: step-gradle-build.py
+    notes: ""
+  - number: 07
+    name: gen-report
+    script: step-gen-report.py
+    notes: ""
+  - number: 08
+    name: stub-methods
+    script: step-stub-methods.py
+    notes: ""

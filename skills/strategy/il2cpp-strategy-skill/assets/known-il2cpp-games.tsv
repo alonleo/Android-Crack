@@ -1,0 +1,25 @@
+# 已知 il2cpp 加密 Unity 游戏 / 应用清单
+
+> **用途**：阶段 00 / 00a 启动时，若 APK 包名匹配此清单，则可直接进入
+> `il2cpp-unity-crypto-crack` 工作流（无需再做难度评估）。
+>
+> **格式**：`<package_name>\t<encryption_type>\t<grade>\t<notes>`
+>
+> **扩展规则**：每发现一个加密 il2cpp 项目，追加一行；不要删改旧条目。
+> 若修正已有结论，加 `[supersedes: <原条目>]`。
+
+## 加密类型
+
+- `il2cpp-basic`：标准 il2cpp，无特殊加密（FakerAndroid 可一键处理）
+- `il2cpp-metadata-encrypted`：metadata 加密（需运行时 dump）
+- `il2cpp-so-stripped`：libil2cpp.so 被 strip + 自实现加载
+- `il2cpp-vm`：自实现 VM（如 \u731c\u6d4b\u52a8\u6f2f\u5236）
+
+## 清单
+
+| Package | Type | Grade | Notes | 来源 |
+|---------|------|-------|-------|------|
+| air.com.mobigrow.canyouescape2 | （占位） | 待评估 | CanYouEscape2 是 AIR 而非 il2cpp | placeholder |
+| com.playrix.* | il2cpp-basic | A | Playrix 多数游戏用 il2cpp | 通用 |
+| com.supercell.* | il2cpp-basic | A | Supercell 用 il2cpp + 强加密 | 通用 |
+| com.king.* | il2cpp-basic | A | King 用 il2cpp | 通用 || ru.playme8.dachniki | il2cpp-basic | B | Golden Farm by playme8 (RU). libil2cpp.so 55 MB. Global IAP (Google/Huawei/RuStore/Xsolla). 广告多 SDK: Admob/IronSource/Huawei/CrossPromo. | 2026-07-25 |

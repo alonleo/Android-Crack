@@ -1,0 +1,10 @@
+# record-project-files/default-action/step-register.yaml
+steps:
+  - number: 1
+    name: write-dir-index
+    script: step-write-dir-index.py
+    notes: ""
+  - number: 2
+    name: write-project-manifest
+    script: step-write-project-manifest.py
+    notes: ""

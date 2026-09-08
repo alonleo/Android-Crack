@@ -1,0 +1,22 @@
+# 13-image-hanization/default-action/step-register.yaml
+steps:
+  - number: 01
+    name: smali-to-jar
+    script: step-smali-to-jar.py
+    notes: ""
+  - number: 02
+    name: gradle-build
+    script: step-gradle-build.py
+    notes: ""
+  - number: 03
+    name: gen-report
+    script: step-gen-report.py
+    notes: ""
+  - number: 04
+    name: detect-images
+    script: step-detect-images.py
+    notes: ""
+  - number: 05
+    name: ocr-images
+    script: step-ocr-images.py
+    notes: ""

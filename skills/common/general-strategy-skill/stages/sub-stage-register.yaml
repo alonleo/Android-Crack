@@ -1,0 +1,88 @@
+# script: null 表示公共实现缺失；expected_script 仅记录预期位置，不参与路由。
+# 公共阶段注册表：阶段名称映射到默认脚本路径。
+# routing.py 优先读取 type register，未命中时查询本表。
+# 主阶段和 helpers 的公共路径也在此注册。
+# 编号与阶段元信息以 skills/common/scripts/strategy/sub-stages.yaml 为准。
+# 路径声明不代表实现存在；调用前须检查目标脚本。
+
+# 主阶段
+major_stages:
+  - id: M1
+    name: sniff
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-sniff.py
+  - id: M2
+    name: assess
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-assess.py
+  - id: M3
+    name: final-check
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-final-check.py
+  - id: M4
+    name: cleanup
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-cleanup.py
+
+# 子阶段（common 默认；type-specific 走各 skill 的 stages/sub-stage-register.yaml）
+sub_stages:
+  # 通用子阶段：01 static-analyze（jadx + smali + SDK 扫描 + 入口定位）
+  - id: '01'
+    name: static-analyze
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-static-analyze.py
+  # 02 preprocess-build（通用）
+  - id: '02'
+    name: preprocess-build
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-preprocess-build.py
+  - id: '03'
+    name: sdk-network-removal
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-sdk-network-removal.py
+  # 04 sdk-network-device-verify
+  - id: '04'
+    name: sdk-network-device-verify
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-sdk-network-device-verify.py
+  # 05 revenue-forwarding（common fallback；il2cpp 有 type-specific 覆盖）
+  - id: '05'
+    name: revenue-forwarding
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-revenue-forwarding.py
+  # 06 revenue-device-verify
+  - id: '06'
+    name: revenue-device-verify
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-revenue-device-verify.py
+  # 07 ui-hide（common fallback）
+  - id: '07'
+    name: ui-hide
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-ui-hide.py
+  # 08 ui-hide-device-verify
+  - id: '08'
+    name: ui-hide-device-verify
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-ui-hide-device-verify.py
+  # 09 font-replace
+  - id: '09'
+    name: font-replace
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-font-replace.py
+  # 10 font-device-verify
+  - id: '10'
+    name: font-device-verify
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-font-device-verify.py
+  # 11 text-hanization
+  - id: '11'
+    name: text-hanization
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-text-hanization.py
+  # 12 text-device-verify
+  - id: '12'
+    name: text-device-verify
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-text-device-verify.py
+  # 13 image-hanization
+  - id: '13'
+    name: image-hanization
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-image-hanization.py
+  # 14 image-device-verify
+  - id: '14'
+    name: image-device-verify
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-image-device-verify.py
+  # 15 record-project-files
+  - id: '15'
+    name: record-project-files
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-record-project-files.py
+
+# helpers（嗅探阶段 helper：XAPK → fat APK 合并）
+helpers:
+  - name: xapk-merge
+    script: skills/common/general-strategy-skill/scripts/workflow/sub-stage-xapk-merge.py

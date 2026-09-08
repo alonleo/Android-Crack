@@ -1,0 +1,335 @@
+# hanization-common-keywords.yaml — 常见游戏内容关键字 → 中文 汉化字典（跨 type 共享）
+#
+# 用途：由 generate-hanization-translations.py 在「文本汉化」子阶段加载，对
+#       global-metadata.dat 的 stringliteral.json 做匹配，生成 translations.json，
+#       再经 metadata-patcher 写回完成汉化。
+#
+# 匹配规则：
+#   - match: exact     —— value 与 stringliteral 串做「大小写不敏感精确匹配」。
+#                         用于整串就是该 UI 文案的情况（最安全，默认）。
+#   - match: contains  —— value 作为「大小写不敏感子串」出现在 stringliteral 串中即命中。
+#                         用于"带占位符/前后缀"的文案，务必用足够独特的串避免误翻样板。
+#
+# 占位符纪律：%s / %d / {0} / <color> 等必须原样保留在 zh 译文中（metadata-patcher 
+#             重建时按 index 写回，格式化串被破坏会运行期异常）。
+#
+# 维护：只追加不删改；新套路提取为关键词条目。
+#
+# 该字典是「常见游戏内容关键字」的共享集，可在此基础上按项目类型补充
+# 类型专用关键字到对应 type skill（objects 段）。
+
+objects:
+  # ------------- 基础 UI / 通用 -------------
+  - en: "PLAY"
+    zh: "开始游戏"
+    match: exact
+  - en: "PLAY!"
+    zh: "开始！"
+    match: exact
+  - en: "START"
+    zh: "开始"
+    match: exact
+  - en: "START!"
+    zh: "开始！"
+    match: exact
+  - en: "YES"
+    zh: "是"
+    match: exact
+  - en: "NO"
+    zh: "否"
+    match: exact
+  - en: "OK"
+    zh: "确定"
+    match: exact
+  - en: "CANCEL"
+    zh: "取消"
+    match: exact
+  - en: "CONFIRM"
+    zh: "确认"
+    match: exact
+  - en: "BACK"
+    zh: "返回"
+    match: exact
+  - en: "NEXT"
+    zh: "下一步"
+    match: exact
+  - en: "EXIT"
+    zh: "退出"
+    match: exact
+  - en: "MENU"
+    zh: "菜单"
+    match: exact
+  - en: "SETTINGS"
+    zh: "设置"
+    match: exact
+  - en: "OPTIONS"
+    zh: "选项"
+    match: exact
+  - en: "CLOSE"
+    zh: "关闭"
+    match: exact
+  - en: "QUIT"
+    zh: "退出"
+    match: exact
+  - en: "RETRY"
+    zh: "重试"
+    match: exact
+  - en: "CONTINUE"
+    zh: "继续"
+    match: exact
+  - en: "RESUME"
+    zh: "继续"
+    match: exact
+  - en: "AGAIN"
+    zh: "再来一次"
+    match: exact
+  - en: "PLAY AGAIN"
+    zh: "再玩一次"
+    match: contains
+  - en: "REPLAY"
+    zh: "重播"
+    match: exact
+  - en: "RESTART"
+    zh: "重新开始"
+    match: exact
+  - en: "PAUSE"
+    zh: "暂停"
+    match: exact
+  - en: "RESET"
+    zh: "重置"
+    match: exact
+  - en: "SKIP"
+    zh: "跳过"
+    match: exact
+  - en: "DONE"
+    zh: "完成"
+    match: exact
+  - en: "SAVE"
+    zh: "保存"
+    match: exact
+  - en: "LOAD"
+    zh: "读取"
+    match: exact
+  - en: "LOADING"
+    zh: "加载中"
+    match: exact
+  - en: "DELETE"
+    zh: "删除"
+    match: exact
+  - en: "ACCEPT"
+    zh: "接受"
+    match: exact
+  - en: "REJECT"
+    zh: "拒绝"
+    match: exact
+
+  # ------------- 游戏主流程 -------------
+  - en: "FIGHT!"
+    zh: "开战！"
+    match: exact
+  - en: "FIGHT"
+    zh: "开战"
+    match: exact
+  - en: "ATTACK"
+    zh: "攻击"
+    match: exact
+  - en: "DEFENSE"
+    zh: "防御"
+    match: exact
+  - en: "HEALTH"
+    zh: "生命值"
+    match: exact
+  - en: "STAMINA"
+    zh: "体力"
+    match: exact
+  - en: "ENERGY"
+    zh: "能量"
+    match: exact
+  - en: "SPEED"
+    zh: "速度"
+    match: exact
+  - en: "CRIT"
+    zh: "暴击"
+    match: exact
+  - en: "CRIT:"
+    zh: "暴击："
+    match: exact
+  - en: "DAMAGE"
+    zh: "伤害"
+    match: exact
+  - en: "WIN!"
+    zh: "获胜！"
+    match: exact
+  - en: "WIN"
+    zh: "胜利"
+    match: exact
+  - en: "LOSE"
+    zh: "失败"
+    match: exact
+  - en: "YOU WIN"
+    zh: "你赢了"
+    match: contains
+  - en: "YOU LOSE"
+    zh: "你输了"
+    match: contains
+  - en: "PLAYER"
+    zh: "玩家"
+    match: exact
+  - en: "ENEMY"
+    zh: "敌人"
+    match: exact
+  - en: "ROUND"
+    zh: "回合"
+    match: exact
+  - en: "LEVEL"
+    zh: "等级"
+    match: exact
+  - en: "SCORE"
+    zh: "分数"
+    match: exact
+  - en: "SCORES"
+    zh: "分数"
+    match: exact
+  - en: "BEST SCORE"
+    zh: "最高分"
+    match: contains
+  - en: "HIGH SCORES"
+    zh: "排行榜"
+    match: contains
+  - en: "RANK"
+    zh: "排名"
+    match: exact
+  - en: "NPC"
+    zh: "NPC"
+    match: exact
+  - en: "BOSS"
+    zh: "首领"
+    match: exact
+
+  # ------------- 经济 / 资源 -------------
+  - en: "COIN"
+    zh: "金币"
+    match: exact
+  - en: "COINS"
+    zh: "金币"
+    match: exact
+  - en: "MONEY"
+    zh: "金钱"
+    match: exact
+  - en: "GOLD"
+    zh: "黄金"
+    match: exact
+  - en: "DIAMOND"
+    zh: "钻石"
+    match: exact
+  - en: "GEM"
+    zh: "宝石"
+    match: exact
+  - en: "GEMS"
+    zh: "宝石"
+    match: exact
+  - en: "EXP"
+    zh: "经验"
+    match: exact
+  - en: "XP"
+    zh: "经验"
+    match: exact
+  - en: "FREE"
+    zh: "免费"
+    match: exact
+  - en: "PRICE"
+    zh: "价格"
+    match: exact
+  - en: "COST"
+    zh: "花费"
+    match: exact
+  - en: "BUY"
+    zh: "购买"
+    match: exact
+  - en: "SHOP"
+    zh: "商店"
+    match: exact
+  - en: "STORE"
+    zh: "商店"
+    match: exact
+  - en: "UPGRADE"
+    zh: "升级"
+    match: exact
+  - en: "UNLOCK"
+    zh: "解锁"
+    match: exact
+  - en: "REWARD"
+    zh: "奖励"
+    match: exact
+  - en: "BONUS"
+    zh: "奖励"
+    match: exact
+  - en: "DAILY REWARD"
+    zh: "每日奖励"
+    match: contains
+  - en: "DALY REWARD"
+    zh: "每日奖励"
+    match: contains
+
+  # ------------- 社交 / 去功能点目标 -------------
+  - en: "SHARE"
+    zh: "分享"
+    match: exact
+  - en: "RATE US"
+    zh: "为我们评分"
+    match: contains
+  - en: "MORE GAMES"
+    zh: "更多游戏"
+    match: contains
+  - en: "LEADERBOARD"
+    zh: "排行榜"
+    match: exact
+  - en: "VIP"
+    zh: "VIP"
+    match: exact
+  - en: "RESTORE"
+    zh: "恢复购买"
+    match: exact
+  - en: "PRIVACY POLICY"
+    zh: "隐私政策"
+    match: contains
+  - en: "CONTACT US"
+    zh: "联系我们"
+    match: contains
+
+  # ------------- 音频 -------------
+  - en: "MUSIC"
+    zh: "音乐"
+    match: exact
+  - en: "MUSIC ON"
+    zh: "音乐：开"
+    match: exact
+  - en: "MUSIC OFF"
+    zh: "音乐：关"
+    match: exact
+  - en: "SOUND"
+    zh: "音效"
+    match: exact
+  - en: "SOUND ON"
+    zh: "音效：开"
+    match: exact
+  - en: "SOUND OFF"
+    zh: "音效：关"
+    match: exact
+  - en: "VOLUME"
+    zh: "音量"
+    match: exact
+
+# 类型专用关键字段：不同 type skill 可在此追加（按 type 键）。
+# 例如 il2cpp 斗鸡博彩游戏：PERA（菲语"钱"）→ 金额 / HULOG（垫付）等。
+type_extra:
+  il2cpp:
+    - en: "PERA"
+      zh: "金额"
+      match: exact
+    - en: "PERA!"
+      zh: "金钱！"
+      match: exact
+    - en: "CHICKEN"
+      zh: "斗鸡"
+      match: exact

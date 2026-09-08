@@ -1,0 +1,6 @@
+run-action: default-action
+all-actions:
+- name: default-action
+  steps: 6
+  path: ./default-action
+  notes: ''

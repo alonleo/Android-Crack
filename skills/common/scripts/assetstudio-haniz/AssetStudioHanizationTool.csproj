@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Mono.Cecil" Version="0.11.5" />
+    <PackageReference Include="ZstdSharp.Port" Version="0.7.2" />
+    <PackageReference Include="MessagePack" Version="2.6.100-alpha" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AssetStudio">
+      <HintPath>/home/leo/文档/android-crack/tools/crack-intergration-tools/source-projects/assetstudio/AssetStudio/bin/Release/net10.0/AssetStudio.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetStudio.Utility">
+      <HintPath>/home/leo/文档/android-crack/tools/crack-intergration-tools/source-projects/assetstudio/AssetStudio.Utility/bin/Release/net10.0/AssetStudio.Utility.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

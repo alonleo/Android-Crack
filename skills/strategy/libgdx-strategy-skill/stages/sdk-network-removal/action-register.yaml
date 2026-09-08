@@ -1,0 +1,13 @@
+# sdk-network-removal/action-register.yaml — 动作路由/配置表(动态 action 声明)
+#
+# run-action: 当前子阶段实际使用的 action 名(可被 --action 参数覆盖,也可由运行时环境决定)
+#            default-action 只是默认 action 名,实际可为任意 action 名(如 fast-analyze / deep-analyze)
+# all-actions: 该子阶段所有可用执行方案(action)清单;每项 {name, steps, path, notes}
+#              action-driver 按 run-action + 参数从清单动态选择
+#
+run-action: default-action
+all-actions:
+    - name: default-action
+      steps: 8
+      path: ./default-action
+      notes: ""

@@ -1,0 +1,117 @@
+{
+  "version": "1.0.0",
+  "description": "从 dump.cs 自动匹配 hook 目标的正则规则集；stage-08b-hook-scaffold.sh 读取此文件生成 Frida 脚本 + C++ hook 桩。",
+  "categories": [
+    {
+      "name": "encryption",
+      "weight": 10,
+      "patterns": [
+        "Decrypt",
+        "Encrypt",
+        "AesDecrypt",
+        "AesEncrypt",
+        "XorEncrypt",
+        "XorDecode",
+        "Base64Decode",
+        "Base64Encode",
+        "RsaDecrypt",
+        "RsaEncrypt",
+        "DecodeString",
+        "EncodeString",
+        "DesDecrypt",
+        "DesEncrypt",
+        "Md5Hash",
+        "Sha256Hash",
+        "CipherInit",
+        "CipherFinal",
+        "EncryptBytes",
+        "DecryptBytes"
+      ]
+    },
+    {
+      "name": "auth",
+      "weight": 8,
+      "patterns": [
+        "CheckLicense",
+        "VerifySignature",
+        "IsAuthed",
+        "CheckIntegrity",
+        "VerifyToken",
+        "CheckToken",
+        "ValidateSign",
+        "LicenseCheck",
+        "AuthCheck",
+        "VerifyIntegrity",
+        "CheckAuth",
+        "VerifyPurchase",
+        "IsPurchased",
+        "HasEntitlement"
+      ]
+    },
+    {
+      "name": "network",
+      "weight": 5,
+      "patterns": [
+        "SendRequest",
+        "HttpGet",
+        "HttpPost",
+        "ConnectServer",
+        "AuthLogin",
+        "VerifyServer",
+        "SendToServer",
+        "RequestUrl",
+        "FetchData",
+        "DownloadFile"
+      ]
+    },
+    {
+      "name": "anti_cheat",
+      "weight": 9,
+      "patterns": [
+        "AntiCheatCheck",
+        "RootDetection",
+        "IsRooted",
+        "CheckEmulator",
+        "IsEmulator",
+        "CheckDebugger",
+        "DetectFrida",
+        "CheckHook",
+        "IntegrityCheck",
+        "TamperDetection",
+        "CheckSignature",
+        "VerifyAppSignature"
+      ]
+    },
+    {
+      "name": "iap",
+      "weight": 7,
+      "patterns": [
+        "PurchaseProduct",
+        "RestorePurchase",
+        "VerifyReceipt",
+        "ValidateReceipt",
+        "ConfirmPurchase",
+        "OnPurchaseSuccess",
+        "HandleIAP"
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "description": "排除 Unity 内部自动生成的方法",
+      "patterns": [
+        "^\\.ctor$",
+        "^\\.cctor$",
+        "get_",
+        "set_",
+        "add_",
+        "remove_"
+      ]
+    }
+  ],
+  "extraction_rules": {
+    "method_signature_regex": "//\\s*RVA:0x[0-9a-fA-F]+\\s+Offset:0x([0-9a-fA-F]+)\\s+VA:0x[0-9a-fA-F]+(?:\\s+Slot:\\d+)?\\s*\\n\\s*(public|private|internal|protected)[^(]*\\b([A-Za-z_][A-Za-z0-9_]*)\\b\\(",
+    "max_targets_per_category": 10,
+    "min_function_name_length": 4
+  }
+}

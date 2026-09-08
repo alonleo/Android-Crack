@@ -1,0 +1,106 @@
+_comment: '总子阶段路由表。
+
+  通用信息仅含：id/name/name_zh/function/verify（无时间信息）。
+
+  具体配置（script/outputs/notes/handlers）见各策略 skill 的 sub-stages.yaml。
+
+  major_stages = 主阶段脚本（独立于子阶段排序，供 run-major-*.py 查询）。
+
+    - 总阶段数：15'
+sub_stages:
+- id: '01'
+  name: static-analyze
+  name_zh: 通用静态分析
+  function: 通用静态分析（jadx + smali + SDK 扫描 + 入口定位）
+  verify: false
+- id: '02'
+  name: preprocess-build
+  name_zh: 预处理构建检测
+  function: 预处理构建检测（APK 完整性记录 + apktool 解包 + 编译测试）
+  verify: false
+- id: '03'
+  name: sdk-network-removal
+  name_zh: 去SDK + 去网络检测（合并）
+  function: '去第三方SDK + 去网络检测（5 步：信息收集 → 统一清理 → 统一桩化 → 一次构建 → 统一报告；原 04 + 06 合并）'
+  verify: false
+- id: '04'
+  name: sdk-network-device-verify
+  name_zh: 真机验收（SDK + 网络检测合并）
+  function: '真机验收（SDK 移除 + 网络检测移除，2 段：普通模式 + 飞行模式；）'
+  verify: true
+- id: '05'
+  name: revenue-forwarding
+  name_zh: 激励视频转发
+  function: '激励视频 + IAP（Premium）转发（7 步：信息收集 → 策略选择 → hook 注册（A64HookFunction/HookArm/smali_patch） → 调用链检查 → yaml 报告 → smali→jar → gradlew 构建；）'
+  verify: false
+- id: '06'
+  name: revenue-device-verify
+  name_zh: 真机验收（激励 + IAP）
+  function: '真机验收（激励视频 + IAP 合并）：adb logcat showVideo/processPurchase 命中 + 进程存活 + 无 crash + 无 FATAL'
+  verify: true
+- id: '07'
+  name: ui-hide
+  name_zh: 去功能点
+  function: 去功能点（UI 隐藏 + 区域裁剪）
+  verify: false
+- id: '08'
+  name: ui-hide-device-verify
+  name_zh: 真机验收（去功能点）
+  function: 真机验收（去功能点）：目标按钮不可见 + 布局未变形 + 核心玩法可进
+  verify: true
+- id: '09'
+  name: font-replace
+  name_zh: 字体替换
+  function: 字体替换（中文字体注入 res/font/）
+  verify: false
+- id: '10'
+  name: font-device-verify
+  name_zh: 真机验收（字体）
+  function: 真机验收（字体）：安装启动无崩溃 + 字体加载无 RuntimeException
+  verify: true
+- id: '11'
+  name: text-hanization
+  name_zh: 文本汉化操作
+  function: 文本汉化操作（strings.xml + hanization_map.h）
+  verify: false
+- id: '12'
+  name: text-device-verify
+  name_zh: 真机验收（文本）
+  function: 真机验收（文本）：OCR 命中中文 + %s/%d 占位符保留
+  verify: true
+- id: '13'
+  name: image-hanization
+  name_zh: 图片汉化操作
+  function: 图片汉化操作（含文字 PNG 重绘）
+  verify: false
+- id: '14'
+  name: image-device-verify
+  name_zh: 真机验收（图片）
+  function: 真机验收（图片）：OCR 命中中文 + 无变形/拉伸/黑边
+  verify: true
+- id: '15'
+  name: record-project-files
+  name_zh: 记录工程文件
+  function: 记录工程文件（crackings/<type>/<Name>/project/ 工程清单 + dir-index.yaml）
+  verify: false
+major_stages:
+- id: M1
+  name: sniff
+  name_zh: 类型嗅探
+  function: 类型嗅探（unzip -l + sniff_patterns 匹配）
+  verify: false
+- id: M2
+  name: assess
+  name_zh: 难度评估
+  function: 难度评估（6 维加权 → grade S/A/B/C/D/F）
+  verify: false
+- id: M3
+  name: final-check
+  name_zh: 最终验收
+  function: 最终验收（6 条硬指标全过）
+  verify: false
+- id: M4
+  name: cleanup
+  name_zh: 清理临时空间
+  function: 清理临时空间（仅保留最终产物）
+  verify: false

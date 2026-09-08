@@ -1,0 +1,28 @@
+# 11-text-hanization/metadata-hanize/step-register.yaml
+# [方案A] global-metadata.dat 字符串字面量静态替换。
+# 顺序 = number 升序执行；报告(gen-report)固定在最后一步。
+steps:
+  - number: 01
+    name: prepare-metadata
+    script: step-prepare-metadata.py
+    notes: "定位 global-metadata.dat + 提取/复用 stringliteral.json"
+  - number: 02
+    name: load-translations
+    script: step-load-translations.py
+    notes: "加载 index→译文 patch(translations.json)"
+  - number: 03
+    name: patch-metadata
+    script: step-patch-metadata.py
+    notes: "基于原 metadata 重建(经 metadata-patcher.py patch)"
+  - number: 04
+    name: smali-to-jar
+    script: step-smali-to-jar.py
+    notes: "校验 classes.all.dex.jar(通用)"
+  - number: 05
+    name: gradle-build
+    script: step-gradle-build.py
+    notes: "校验 app-release.apk(通用)"
+  - number: 06
+    name: gen-report
+    script: step-gen-report.py
+    notes: "yaml 报告(最后一步)"
